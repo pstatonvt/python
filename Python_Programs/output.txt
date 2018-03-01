@@ -1,0 +1,6 @@
+Raw list: [100, 85, 1, 4, 5]
+Sorted: [1, 4, 5, 85, 100]
+Average: 39.0
+Sum: 195
+Maximum: 100
+Minimum: 1
