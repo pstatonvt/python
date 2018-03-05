@@ -19,7 +19,14 @@ for name in names:
   counts[name] = counts.get(name, 0) + 1
 print(counts)
 
-
+----
+[THESE ARE THE SAME!]
+if key in counts:
+    counts[key] = counts[key] + 1
+else:
+    counts[key] = 1
+*AND*
+counts[key] = counts.get(key,0) + 1
 ----
 
 [looping through dictionaries]
