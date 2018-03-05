@@ -1,4 +1,4 @@
-new name in dictionary
+[new name in dictionary]
 
 counts = dict()
 for name in names:
@@ -6,3 +6,15 @@ for name in names:
     counts[name]=1
   else:
     counts[name] += 1
+
+-----
+
+[get method]
+
+x = [dict].get([key],[default]) .. so for example... x = counts.get(name, 0)
+#so NEW keys get a default value of zero + 1 (SO.. 1)
+counts = dict()
+names = ['csev','cwen','csev','zqian','cwen']
+for name in names:
+  counts[name] = counts.get(name, 0) + 1
+print(counts)
