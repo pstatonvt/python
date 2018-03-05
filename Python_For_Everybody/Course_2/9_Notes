@@ -18,3 +18,19 @@ names = ['csev','cwen','csev','zqian','cwen']
 for name in names:
   counts[name] = counts.get(name, 0) + 1
 print(counts)
+
+
+----
+
+[looping through dictionaries]
+for [tag] in [dict]:
+  print(key, counts[key])
+  
+
+"[dict].items()" includes both KEYS and VALUES
+
+[iterating through a dictionary]
+
+jjj = { (things) }
+for aaa,bbb in jjj.items():
+  print(aaa,bbb)
