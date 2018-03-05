@@ -18,8 +18,7 @@ for line in fh:
 
 for name in lst:
     storage[name] = storage.get(name, 0) + 1
-print("Dictionary: ",storage)
-print()
+
 
 largest = None
 for x in storage.values():
@@ -27,8 +26,5 @@ for x in storage.values():
         largest = x
     if x > largest:
         largest = x
-print("Largest: ",largest)
-print()
 
-for key in storage:
-        
+print(name,largest)
