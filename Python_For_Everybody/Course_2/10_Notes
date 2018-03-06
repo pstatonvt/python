@@ -30,3 +30,23 @@ Same thing with string comparison, letter by letter, character by character
 dict_items([('a',10), ('c',22), ('b',1)])
 >>>sorted(d.items())
 [('a',10), ('b',1), ('c', 22)]
+
+*sorted()* orders by KEY-order in a dictionary, NOT value order
+
+To sort by values instead of key:
+>>> c= {'a':10, 'b':1, 'c':22}
+>>> tmp = list()
+>>> for k,v in c.items():
+  tmp.append( (v,k ) ) #this just reverses the order since we want to order by VALUE
+>>>print(tmp)
+[(10,'a'),(22,'c'),(1,'b')]
+>>>tmp = sorted(tmp, reverse=True)
+>>>print(tmp)
+[(22,'c'),(10,'a'),(1,'b')]
+
+Top 10 of something... Ch. 10 video, ~14 min into the video
+
+***super interesting one liner of code, sorting a dictionary and printing out in order - LIST COMPREHENSION
+>>>c = {'a':10, 'b':1, 'c':22}
+>>>print(sorted)[ (v,k) for k,v in c.items() ] ) ) #might need reverse = True
+[(1, 'b'), (10, 'a'), (22, 'c')]
