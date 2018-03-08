@@ -26,3 +26,48 @@ $        Matches the end of the line
 re.search() to see if a string matches a reg ex, similar to find()
 
 re.findall() to extract portions of a string that match your reg ex, similar to a combo of find() and slicing: var[5:10]
+
+Ex1)
+[Using re.search() like find()]
+
+hand = open('mbox-short.txt')
+for line in hand:
+         line = line.rstrip()
+         if line.find('From: ') >= 0:
+                  print(line)
+                  
+OR...
+
+import re
+
+hand = open('mbox-short.txt')
+for line in hand:
+         line = line.rstrip()
+         if re.search('From:', line):
+                  print(line)
+Similarly...                  
+                  
+hand = open('mbox-short.txt')
+for line in hand:
+         line = line.rstrip()
+         if line.startswith('From: ') >= 0:
+                  print(line)
+                  
+                  
+OR...
+
+hand = open('mbox-short.txt')
+for line in hand:
+         line = line.rstrip()
+         if re.search('^From:', line): #'^' means look for 'From:' at the beginning of a line
+                  print(line)
+                  
+---
+
+The dot (.) character matches any characters. If you add the asterisk (*) character, the character is "any number of times."
+^X.*:   ... what this means, is "i'm looking for any line that starts with X, following by some number of characters, followed by a colon
+
+So this code may find things like:
+X-Sieve:
+X-DSPAM-Result:
+X-Content-Type-Message-Body:
