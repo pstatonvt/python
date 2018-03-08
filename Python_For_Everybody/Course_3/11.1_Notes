@@ -71,3 +71,7 @@ So this code may find things like:
 X-Sieve:
 X-DSPAM-Result:
 X-Content-Type-Message-Body:
+
+
+QUIZ NOTES:
+[a-z0-9] the set of characters can include a range
