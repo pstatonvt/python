@@ -1,0 +1,23 @@
+[Parsing Web Pages]
+
+Web Scraping - when a program pretends to be a browser and retrieves web pages, looks at those web pages, extracts information, and then looks at more web pages... "spidering the web" or "web crawling"
+
+Why Scrape?
+Pull or extract data, but be careful! Make sure it's legal for the site you're scraping!
+
+Beautiful Soup
+from bs4 import BeautifulSoup
+
+---
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeatifulSoup
+
+url = input('Enter - ')
+html = urllib.request.uropen(url).read()
+soup = BeautifulSoup(html, 'html.parser')
+
+# Retrieve all of the anchor tags
+tags = soup('a')
+for tag in tags:
+	print(tag.get('href', None))
+---
