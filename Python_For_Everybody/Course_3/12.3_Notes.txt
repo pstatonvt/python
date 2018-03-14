@@ -1,0 +1,39 @@
+[Unicode Characters and Strings]
+
+>>>print(ord('H'))
+72
+
+*ord* prints the cooresponding ASCII value for a character
+
+All uppercase chars are less than lowercase chars
+
+Unicode has lots and lots of characters that allows all computers to talk to each other; no matter what country they're from. 
+
+UTF-8/16/32
+
+UTF-8 is the best*** 1-4 bytes
+
+Everything in Python is unicode
+
+Byte string - bytes are the same as string, but the unicode is different
+
+Unicode and Strings are the same, but strings and bytes are different in Python 3
+
+In Python 3, all strings internally are unicode.
+
+Decoding operation...
+
+".decode()" goes from 'bytes' to 'unicode'
+".encode()" takes a string, and turns it into bytes (UTF-8)
+such as... cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\n\n'.encode()
+---
+while True:
+	data = mysock.recv(512) #<---- bytes
+	if (len(data) < 1):break
+	mystring = data.decode() #<---- unicode
+	print(mystring)
+---
+
+Turns everything it pulls to unicode
+
+Before we send/receive, we have to encode and decode
