@@ -18,4 +18,5 @@ soup = BeautifulSoup(html, 'html.parser')
 tags = soup('a')
 
 for line in tags:
+    print(line)
     #print(line)
