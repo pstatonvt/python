@@ -18,6 +18,7 @@ soup = BeautifulSoup(html, "html.parser")
 span = soup('span')
 
 #isolating the numbers in the column, appending them to a list, and summing them
+'''
 for x in span:
     counter += 1
     x.contents[0] = int(x.contents[0])
@@ -25,3 +26,4 @@ for x in span:
 
 print("Count", counter)
 print("Sum", sum(array))
+'''
