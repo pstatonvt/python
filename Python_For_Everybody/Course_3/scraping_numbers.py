@@ -13,7 +13,7 @@ ctx.verify_mode = ssl.CERT_NONE
 url = 'http://py4e-data.dr-chuck.net/comments_72206.html'
 html = urlopen(url, context=ctx).read()
 soup = BeautifulSoup(html, "html.parser")
-<<<<<<< HEAD
+#<<<<<<< HEAD
 print(soup)
 # Retrieve all of the anchor tags
 tags = soup('a')
@@ -23,7 +23,7 @@ for tag in tags:
     print('URL:', tag.get('href', None))
     print('Contents:', tag.contents[0])
     print('Attrs:', tag.attrs)
-=======
+#=======
 
 # Retrieve all of the anchor numberss
 span = soup('span')
@@ -36,4 +36,4 @@ for x in span:
 
 print("Count", counter)
 print("Sum", sum(array))
->>>>>>> db292f38c555d17d485cc4e18808fe82922e5b40
+#>>>>>>> db292f38c555d17d485cc4e18808fe82922e5b40
