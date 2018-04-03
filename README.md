@@ -1,2 +1,2 @@
 # python
-A simple storage space for Python code
+A repository for my Python Coursera code. 

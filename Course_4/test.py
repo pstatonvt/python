@@ -31,7 +31,7 @@ an.party()
 an.party()
 an = 42
 print("an contains", an)
-'''
+
 
 class PartyAnimal:
     x = 0
@@ -52,3 +52,4 @@ s.party()
 j = PartyAnimal("Jim")
 j.party()
 s.party()
+'''
