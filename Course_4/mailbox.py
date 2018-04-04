@@ -25,32 +25,35 @@ cur.execute('DROP TABLE IF EXISTS Counts')
 
 #creating rows/columns in database
 cur.execute('''
-CREATE TABLE Counts (email TEXT, count INTEGER) ''')
+CREATE TABLE Counts (org TEXT, count INTEGER) ''')
 
 #opening mbox.txt
 fname = 'mbox.txt'
 fh = open(fname)
 
-#start reading through the file grabbing emails and counting them (dictionary style)
+#start reading through the file grabbing email domains and counting them (dictionary style)
 for line in fh:
     if not line.startswith('From: '):continue
     line = line.split()
     emails = line[1]
-    print(emails)
+    domains = emails.split('@')
+    domains_storage = domains[1]
+    #print(domains_storage)
+
 
 ###no idea what this does###
-    cur.execute('SELECT count FROM Counts WHERE email = ?', (email,))
+    cur.execute('SELECT count FROM Counts WHERE org = ?', (domains_storage,))
     row = cur.fetchone()
     if row is None:
-        cur.execute('''INSERT INTO Counts (email, count) VALUES (?, 1)''', (email,))
+        cur.execute('''INSERT INTO Counts (org, count) VALUES (?, 1)''', (domains_storage,))
     else:
-        cur.execute('UPDATE Counts SET count += 1 WHERE email = ?', (email,))
-    conn.commit()
+        cur.execute('UPDATE Counts SET count = count + 1 WHERE org = ?', (domains_storage,))
+conn.commit()
 
-sqlstr = 'SELECT email, count FROM Counts ORDER BY count DESC LIMIT 10'
+sqlstr = 'SELECT org, count FROM Counts ORDER BY count DESC LIMIT 10'
 
 for row in cur.execute(sqlstr):
     print(str(row[0]), row[1])
 
 cur.close()
-###no idea what this does###     
+###no idea what this does###
